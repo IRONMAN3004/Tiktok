@@ -25,7 +25,7 @@
     position: relative;
     display: flex;
     height: var(--search-height, 46px);
-    width: var(--search-width, 3560px);
+    width: var(--search-width, 356px);
     //background-color: rgb(231, 117, 71);
     border: 1.5px solid rgb(238, 235, 235);
     border-radius: 92px;
@@ -64,6 +64,17 @@
 // .search_input:not(:placeholder-shown) ~ .Search-btn {
 //     background-color: #e59fe5;
 // }
+
+.search-result {
+    width: var(--search-width);
+}
+.search-title {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: rgb(147, 145, 144);
+    padding: 5px 12px;
+}
+
 .close,
 .loading {
     position: absolute;
@@ -71,6 +82,18 @@
     top: 50%;
     transform: translateY(-50%);
     color: rgb(228, 164, 248);
+}
+
+// ------Hay nhé-----
+@mixin tippy-style {
+    background-color: #333;
+    color: #fff;
+    border-radius: 4px;
+    font-size: 14px;
+    padding: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    border-top-right-radius: 92px;
+    border-bottom-right-radius: 92px;
 }
 .Search-btn {
     font-size: 1.6rem;
@@ -81,4 +104,7 @@
     // color: rgb(228, 164, 248);
     border-top-right-radius: 92px;
     border-bottom-right-radius: 92px;
+    &:hover {
+        @include tippy-style;
+    }
 }
