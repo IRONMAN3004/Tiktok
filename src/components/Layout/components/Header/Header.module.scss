@@ -86,8 +86,8 @@
 
 // ------Hay nhé-----
 @mixin tippy-style {
-    background-color: #333;
-    color: #fff;
+    background-color: hsl(283, 54%, 90%, 0.7);
+    color: #f56060;
     border-radius: 4px;
     font-size: 14px;
     padding: 8px;
@@ -107,4 +107,10 @@
     &:hover {
         @include tippy-style;
     }
+}
+
+.custom-login {
+    background-color: #e59fe5;
+    padding: 9px 16px;
+    border-radius: 999px;
 }

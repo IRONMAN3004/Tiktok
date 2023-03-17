@@ -1,0 +1,66 @@
+.wrapper {
+    font-size: 1.6rem;
+    font-weight: 700;
+    min-width: 100px;
+    padding: 9px 16px;
+    border-radius: 4px;
+    text-decoration: none;
+    background-color: white;
+    cursor: pointer;
+    border: 1px solid transparent;
+    user-select: none;
+    + .wrapper {
+        margin-left: 8px;
+    }
+
+    &.disable {
+        pointer-events: none;
+    }
+}
+
+.icon + .title,
+.title + .icon {
+    margin-left: 8px;
+}
+
+.rounded {
+    border-radius: 999px;
+    border: 2px solid rgb(224, 170, 170, 0.3);
+    &:hover {
+        background-color: rgb(250, 235, 215, 0.5);
+        box-shadow: 0 2px 8px rgb(0 0 0 / 6%);
+    }
+}
+
+.primary {
+    background-color: rgb(212, 167, 238);
+
+    &:hover {
+        background-color: rgba(212, 167, 238);
+        color: white;
+    }
+}
+
+.outline {
+    border-color: brown;
+    border-color: brown;
+    &:hover {
+        background-color: rgb(224, 193, 242);
+        color: white;
+    }
+}
+
+.small {
+    min-width: 90px;
+    padding: 4px 16px;
+}
+.large {
+    min-width: 150px;
+    padding: 9px 16px;
+}
+
+.text {
+    &:hover {
+        text-decoration: underline;
+    }
+}
