@@ -1,0 +1,20 @@
+//Menu list
+.menu-list {
+    width: 224px;
+    //menu-item
+    .menu-item {
+        display: block;
+        margin-left: 0px;
+        width: 100%;
+        text-align: left;
+    }
+}
+
+.menu-popper {
+    padding: 8px 0;
+}
+.menu-item {
+    &:hover {
+        background-color: var(--default-hover);
+    }
+}

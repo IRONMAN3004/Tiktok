@@ -8,10 +8,11 @@
     --black: black;
     --white: white;
     --pink: pink;
-    --text-color: #333;
+    --text-color: black;
     //Default layout
     --default-layout-header-height: 60px;
     --default-layout-width: 1150px;
+    --default-hover: rgba(237, 209, 245, 0.2);
 }
 * {
     margin: 0;

@@ -11,7 +11,7 @@ function Button({
     disable = false,
     rounded = false,
     small = false,
-    large = false, //ko truyền trong component cha thì mặc định nó lấy giá trị dèault là false
+    large = false, //ko truyền trong component cha thì mặc định nó lấy giá trị default là false
     children,
     onClick,
     className,
@@ -26,7 +26,7 @@ function Button({
     const classes = cx('wrapper', {
         primary,
         // primary: primary,
-        [className]: className,
+        [className]: className, //lấy giá trị
         outline,
         small,
         large,

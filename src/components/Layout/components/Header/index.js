@@ -2,7 +2,15 @@ import { useState, useEffect } from 'react';
 import classNames from 'classnames/bind';
 import images from '~/asset/images';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCircleXmark, faMagnifyingGlass, faSignIn, faSpinner } from '@fortawesome/free-solid-svg-icons';
+import {
+    faCircleQuestion,
+    faCircleXmark,
+    faEarthEurope,
+    faEllipsisVertical,
+    faMagnifyingGlass,
+    faSignIn,
+    faSpinner,
+} from '@fortawesome/free-solid-svg-icons';
 import AccountItem from '~/components/AccountItem';
 import Button from '~/components/Button';
 
@@ -10,6 +18,25 @@ import Tippy from '@tippyjs/react/headless';
 // import 'tippy.js/dist/tippy.css';
 import styles from './Header.module.scss';
 import { Wrapper as PopperWrapper } from '~/components/Popper';
+import Menu from '~/components/Popper/Menu';
+import { faKeyboard } from '@fortawesome/free-regular-svg-icons';
+// -------------------------------------------------------------------
+
+const MENU_ITEMS = [
+    {
+        icon: <FontAwesomeIcon icon={faEarthEurope} />,
+        title: 'Tiếng việt',
+    },
+    {
+        icon: <FontAwesomeIcon icon={faCircleQuestion} />,
+        title: 'Feedback and help',
+        to: '/feedback',
+    },
+    {
+        icon: <FontAwesomeIcon icon={faKeyboard} />,
+        title: 'Keyboard shortcuts',
+    },
+];
 
 function Header() {
     const [searchResult, setSearchResult] = useState([]);
@@ -28,11 +55,18 @@ function Header() {
                 </div>
 
                 <Tippy
-                    visible={searchResult.length > 0}
+                    // visible={searchResult.length > 0}
                     interactive="true"
+                    delay={[0, 250]}
                     //Đoạn này tức mình tự tạo content nó hiện ra chứ ko dùng mặc định
                     render={(attrs) => (
                         <div className={cx('search-result')} tabIndex="-1" {...attrs}>
+                            {/* //tại sao phải tạo component  <PopperWrapper> thì nó là 
+                            ô vuông hiển thị => </PopperWrapper>để tái sử dụng code  
+                            nên nó nhận vào 1  prop là children để hiện thị nội dung thôi còn
+                            bản chất nó chỉ là cái khung bên ngoài css cho đẹp còn nội dung bên trong
+                            nó thì khác nhau  (mục đíhc tái sử dụng thôi khỏi tạo ra nhiều component)
+                            */}
                             <PopperWrapper>
                                 <h4 className={cx('search-title')}>Account</h4>
                                 <AccountItem />
@@ -68,6 +102,12 @@ function Header() {
                     <Button primary rightIcon={<FontAwesomeIcon icon={faSignIn} />}>
                         Login
                     </Button>
+
+                    <Menu width items={MENU_ITEMS}>
+                        <button className={cx('more-btn')}>
+                            <FontAwesomeIcon icon={faEllipsisVertical} />
+                        </button>
+                    </Menu>
                 </div>
             </div>
         </header>
