@@ -25,7 +25,22 @@ import { faKeyboard } from '@fortawesome/free-regular-svg-icons';
 const MENU_ITEMS = [
     {
         icon: <FontAwesomeIcon icon={faEarthEurope} />,
-        title: 'Tiếng việt',
+        title: 'English',
+        children: {
+            title: 'Language',
+            data: [
+                {
+                    type: 'language',
+                    code: 'en',
+                    title: 'English',
+                },
+                {
+                    type: 'language',
+                    code: 'vi',
+                    title: 'Tiếng Việt',
+                },
+            ],
+        },
     },
     {
         icon: <FontAwesomeIcon icon={faCircleQuestion} />,
@@ -47,6 +62,18 @@ function Header() {
         }, 5000);
     }, []);
     const cx = classNames.bind(styles);
+
+    //handle
+    const handleMenuItem = (item) => {
+        console.log(item);
+        switch (item.type) {
+            case 'language': {
+                console.log('sử lý type language');
+                break;
+            }
+            default:
+        }
+    };
     return (
         <header className={cx('wrapper')}>
             <div className={cx('inner')}>
@@ -56,17 +83,12 @@ function Header() {
 
                 <Tippy
                     // visible={searchResult.length > 0}
+
                     interactive="true"
                     delay={[0, 250]}
                     //Đoạn này tức mình tự tạo content nó hiện ra chứ ko dùng mặc định
                     render={(attrs) => (
                         <div className={cx('search-result')} tabIndex="-1" {...attrs}>
-                            {/* //tại sao phải tạo component  <PopperWrapper> thì nó là 
-                            ô vuông hiển thị => </PopperWrapper>để tái sử dụng code  
-                            nên nó nhận vào 1  prop là children để hiện thị nội dung thôi còn
-                            bản chất nó chỉ là cái khung bên ngoài css cho đẹp còn nội dung bên trong
-                            nó thì khác nhau  (mục đíhc tái sử dụng thôi khỏi tạo ra nhiều component)
-                            */}
                             <PopperWrapper>
                                 <h4 className={cx('search-title')}>Account</h4>
                                 <AccountItem />
@@ -88,7 +110,7 @@ function Header() {
                         <button className={cx('clear')}>
                             <FontAwesomeIcon className={cx('close')} icon={faCircleXmark} />
                         </button>
-                        <FontAwesomeIcon className={cx('loading')} icon={faSpinner} />
+                        {/* <FontAwesomeIcon className={cx('loading')} icon={faSpinner} /> */}
                         <button className={cx('Search-btn')}>
                             <FontAwesomeIcon icon={faMagnifyingGlass} />
                         </button>
@@ -103,7 +125,14 @@ function Header() {
                         Login
                     </Button>
 
-                    <Menu width items={MENU_ITEMS}>
+                    <Menu
+                        width
+                        items={MENU_ITEMS}
+                        onChange={
+                            handleMenuItem
+                            //ý nghĩa onChage này là tên prop thôi muốn đặt tên gì cũng đc chứ nó ko phải event onChange
+                        }
+                    >
                         <button className={cx('more-btn')}>
                             <FontAwesomeIcon icon={faEllipsisVertical} />
                         </button>
@@ -115,3 +144,13 @@ function Header() {
 }
 
 export default Header;
+
+/*
+--Note 
+    //tại sao phải tạo component  <PopperWrapper> thì nó là 
+    modal hiển thị => </PopperWrapper>để tái sử dụng code  
+    nên nó nhận vào 1  prop là children để hiện thị nội dung thôi còn
+    bản chất nó chỉ là cái khung bên ngoài css cho đẹp còn nội dung bên trong
+    nó thì khác nhau  (mục đíhc tái sử dụng thôi khỏi tạo ra nhiều component)
+                            
+*/
