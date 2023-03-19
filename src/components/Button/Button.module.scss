@@ -39,10 +39,10 @@
 }
 
 .primary {
-    background-color: rgb(229, 159, 229);
+    background-color: #b1425b;
 
     &:hover {
-        background-color: rgb(229, 159, 229);
+        background-color: rgb(177, 66, 91, 0.9);
         color: white;
     }
 }
@@ -66,6 +66,7 @@
 }
 
 .text {
+    background-color: transparent;
     &:hover {
         text-decoration: underline;
     }

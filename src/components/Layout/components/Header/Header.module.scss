@@ -9,6 +9,8 @@
     box-shadow: 0px 1px 1px rgb(0 0 0 / 12%);
     display: flex;
     justify-content: center;
+    // background-color: rgb(141, 175, 152, 0.3);
+    // background-color: rgba(172, 188, 177);
 }
 
 .inner {
@@ -16,10 +18,10 @@
     height: 100%;
     width: var(--default-layout-width, 1150px);
     padding: 0px var(--default-layout-horizontal-spacer);
-    // background-color: rgb(252, 239, 234);
     // margin: auto;
     justify-content: space-between;
     align-items: center;
+    // background-color: rgb(172, 188, 177, 0.6);
 }
 
 .search {
@@ -126,6 +128,24 @@
     // margin: auto;
     margin-left: 22px;
     padding: 4px;
-    background-color: rgb(229, 159, 229);
+    background-color: #b1425b;
+    border-radius: 999px;
+}
+
+.action-btn {
+    color: rgb(226, 138, 226);
+    // height: 24px;
+    font-size: 2.2rem;
+    background-color: transparent;
+    padding: 4px 12px;
+}
+
+.user-avatar {
+    height: 30px;
+    width: 30px;
+    object-fit: cover;
+    margin: 0 0 0 14px;
+    cursor: pointer;
+
     border-radius: 999px;
 }

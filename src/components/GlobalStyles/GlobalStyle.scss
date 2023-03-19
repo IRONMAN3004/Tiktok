@@ -42,3 +42,15 @@ input,
 a[href] {
     color: var(--text-color);
 }
+
+//custom tippy toolTip
+body .tippy-box {
+    background-color: rgb(68, 72, 71);
+    border-radius: 8px;
+    font-size: 13px;
+    line-height: 1.3;
+    white-space: normal;
+}
+.tippy-arrow {
+    color: rgb(68, 72, 71);
+}

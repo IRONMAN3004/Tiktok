@@ -35,8 +35,12 @@ function Menu({ children, width, items = [], onChange = defaultFn }) {
 
     return (
         <Tippy
-            // visible
+            visible
             delay={[0, 550]}
+            offset={[10, 10]}
+            onHidden={() => {
+                setHistory((prev) => prev.slice(0, 1));
+            }}
             interactive // có thuộc tính này để khi có thể hover đc nội dung trong popper
             placement="bottom-end"
             //Đoạn này tức mình tự tạo content nó hiện ra chứ ko dùng mặc định
@@ -51,6 +55,7 @@ function Menu({ children, width, items = [], onChange = defaultFn }) {
                                 }}
                             />
                         )}
+
                         {renderItems()}
                     </PopperWrapper>
                 </div>
