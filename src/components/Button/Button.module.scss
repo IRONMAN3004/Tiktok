@@ -40,13 +40,32 @@
 
 .primary {
     background-color: #b1425b;
-
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
     &:hover {
         background-color: rgb(177, 66, 91, 0.9);
-        color: white;
+        color: #b1425b;
     }
 }
 
+.primary:after {
+    content: '';
+    background: white;
+    position: absolute;
+    z-index: -1;
+    left: -20%;
+    right: -20%;
+    top: 0;
+    bottom: 0;
+    transform: skewX(-45deg) scale(0, 1);
+    transition: all 0.5s;
+}
+.primary:hover:after {
+    transform: skewX(-45deg) scale(1, 1);
+    -webkit-transition: all 0.5s;
+    transition: all 0.5s;
+}
 .outline {
     border-color: brown;
     border-color: brown;
