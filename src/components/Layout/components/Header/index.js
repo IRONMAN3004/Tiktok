@@ -1,36 +1,28 @@
-import { useState, useEffect } from 'react';
-import classNames from 'classnames/bind';
-import images from '~/asset/images';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
     faArrowRightFromBracket,
     faCircleQuestion,
-    faCircleXmark,
-    faCloudUpload,
     faCoins,
     faEarthEurope,
     faEllipsisVertical,
     faGear,
-    faMagnifyingGlass,
-    faMessage,
     faSignIn,
     faUser,
 } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import classNames from 'classnames/bind';
+import images from '~/asset/images';
 
-import AccountItem from '~/components/AccountItem';
 import Button from '~/components/Button';
 
-import Tippy from '@tippyjs/react';
-import Tippys from '@tippyjs/react';
-import HeadlessTippy from '@tippyjs/react/headless';
+import { default as Tippy, default as Tippys } from '@tippyjs/react';
 
-import 'tippy.js/dist/tippy.css';
-import styles from './Header.module.scss';
-import { Wrapper as PopperWrapper } from '~/components/Popper';
-import Menu from '~/components/Popper/Menu';
 import { faKeyboard } from '@fortawesome/free-regular-svg-icons';
+import 'tippy.js/dist/tippy.css';
 import { MessageIcon, UploadIcon } from '~/components/Icons';
 import Image from '~/components/Image';
+import Search from '~/components/Layout/components/Search';
+import Menu from '~/components/Popper/Menu';
+import styles from './Header.module.scss';
 // -------------------------------------------------------------------
 
 const MENU_ITEMS = [
@@ -65,15 +57,9 @@ const MENU_ITEMS = [
 ];
 
 function Header() {
-    const [searchResult, setSearchResult] = useState([]);
     // const curentUser = false;
     const curentUser = true;
 
-    useEffect(() => {
-        setTimeout(() => {
-            setSearchResult([]);
-        }, 5000);
-    }, []);
     const cx = classNames.bind(styles);
 
     //handle
@@ -121,41 +107,8 @@ function Header() {
                     <Image src={images.logo} />
                 </div>
 
-                <HeadlessTippy
-                    // visible={searchResult.length > 0}
-
-                    interactive="true"
-                    delay={[0, 250]}
-                    //Đoạn này tức mình tự tạo content nó hiện ra chứ ko dùng mặc định
-                    render={(attrs) => (
-                        <div className={cx('search-result')} tabIndex="-1" {...attrs}>
-                            <PopperWrapper>
-                                <h4 className={cx('search-title')}>Account</h4>
-                                <AccountItem />
-                                <AccountItem />
-                                <AccountItem />
-                                <AccountItem />
-                            </PopperWrapper>
-                        </div>
-                    )}
-                >
-                    <div className={cx('search')}>
-                        <input
-                            className={cx('search_input')}
-                            spellCheck="false"
-                            placeholder="Tìm kiếm tài khoản và video..."
-                        />
-
-                        {/*---- search-action------------ */}
-                        <button className={cx('clear')}>
-                            <FontAwesomeIcon className={cx('close')} icon={faCircleXmark} />
-                        </button>
-                        {/* <FontAwesomeIcon className={cx('loading')} icon={faSpinner} /> */}
-                        <button className={cx('Search-btn')}>
-                            <FontAwesomeIcon icon={faMagnifyingGlass} />
-                        </button>
-                    </div>
-                </HeadlessTippy>
+                {/* {Search} */}
+                <Search />
 
                 <div className={cx('action')}>
                     {curentUser ? (

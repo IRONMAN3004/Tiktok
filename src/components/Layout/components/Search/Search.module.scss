@@ -1,0 +1,86 @@
+.search {
+    position: relative;
+    display: flex;
+    height: var(--search-height, 46px);
+    width: var(--search-width, 356px);
+    //background-color: rgb(231, 117, 71);
+    border: 1.5px solid rgb(238, 235, 235);
+    border-radius: 92px;
+    &::after {
+        content: '';
+        position: absolute;
+        top: var(--search-top-spacer);
+        height: calc(var(--search-height) - var(--search-top-spacer) * 2);
+        width: 1px;
+        right: 52px;
+        background-color: rgb(133, 210, 69);
+    }
+    input:not(:placeholder-shown) ~ .Search-btn {
+        color: #e59fe5;
+    }
+    &:focus-within {
+        border: 1.5px solid rgb(240, 203, 203);
+    }
+}
+.search_input {
+    background: rgba(22, 24, 35, 0.06);
+    flex: 1;
+    height: 100%;
+    border: none;
+    // border-radius: 92px;
+    border-top-left-radius: 92px;
+    border-bottom-left-radius: 92px;
+    padding: 12px 16px;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 22px;
+    // outline: none;
+    appearance: textfield;
+    caret-color: #e59fe5;
+}
+
+// ------Hay nhé-----
+@mixin tippy-style {
+    background-color: rgba(235, 216, 243, 0.7);
+    color: #f56060;
+    border-radius: 4px;
+    font-size: 14px;
+    padding: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    border-top-right-radius: 92px;
+    border-bottom-right-radius: 92px;
+}
+
+.Search-btn {
+    font-size: 1.6rem;
+    right: 520px;
+    width: 52px;
+    border: none;
+    outline: none;
+    color: rgb(226, 138, 226);
+    // color: rgb(228, 164, 248);
+    border-top-right-radius: 92px;
+    border-bottom-right-radius: 92px;
+    &:hover {
+        @include tippy-style;
+    }
+}
+
+.search-result {
+    width: var(--search-width);
+}
+.search-title {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: rgb(147, 145, 144);
+    padding: 5px 12px;
+}
+
+.close,
+.loading {
+    position: absolute;
+    right: calc(var(--search-button-width) + 16px);
+    top: 50%;
+    transform: translateY(-50%);
+    color: rgb(228, 164, 248);
+}
