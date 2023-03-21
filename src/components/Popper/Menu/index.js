@@ -8,7 +8,7 @@ import Header from './Header';
 
 const cx = classNames.bind(styles);
 const defaultFn = () => {};
-function Menu({ children, width, items = [], onChange = defaultFn }) {
+function Menu({ children, width, items = [], hideOnClick = false, onChange = defaultFn }) {
     // console.log(onChange);
     // console.log(items);
 
@@ -40,6 +40,7 @@ function Menu({ children, width, items = [], onChange = defaultFn }) {
             // visible
             delay={[0, 550]}
             offset={[10, 10]}
+            hideOnClick={hideOnClick}
             onHidden={() => {
                 setHistory((prev) => prev.slice(0, 1));
             }}

@@ -11,9 +11,11 @@ import {
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import classNames from 'classnames/bind';
 import images from '~/asset/images';
+import routesConfig from '~/config/routes';
 
 import Button from '~/components/Button';
 
+import { Link } from 'react-router-dom';
 import { default as Tippy, default as Tippys } from '@tippyjs/react';
 
 import { faKeyboard } from '@fortawesome/free-regular-svg-icons';
@@ -46,9 +48,9 @@ const MENU_ITEMS = [
         },
     },
     {
-        icon: <FontAwesomeIcon icon={faCircleQuestion} />,
-        title: 'Feedback and help',
-        to: '/feedback',
+        icon: <FontAwesomeIcon icon={faUser} />,
+        title: 'View profile',
+        to: '/yboy',
     },
     {
         icon: <FontAwesomeIcon icon={faKeyboard} />,
@@ -75,10 +77,11 @@ function Header() {
     };
 
     const userMenu = [
+        ...MENU_ITEMS,
         {
-            icon: <FontAwesomeIcon icon={faUser} />,
-            title: 'View profile',
-            to: '/yboy',
+            icon: <FontAwesomeIcon icon={faCircleQuestion} />,
+            title: 'Feedback and help',
+            to: '/feedback',
         },
         {
             icon: <FontAwesomeIcon icon={faCoins} />,
@@ -90,7 +93,7 @@ function Header() {
             title: 'Setting',
             to: '/setting',
         },
-        ...MENU_ITEMS,
+        // ...MENU_ITEMS,
         {
             icon: <FontAwesomeIcon icon={faArrowRightFromBracket} />,
             title: 'Log out',
@@ -104,7 +107,9 @@ function Header() {
             <div className={cx('inner')}>
                 <div className={cx('logo')}>
                     {/* <img src={images.logo} alt="logo tiktok" /> */}
-                    <Image src={images.logo} />
+                    <Link to={routesConfig.home}>
+                        <Image src={images.logo} />
+                    </Link>
                 </div>
 
                 {/* {Search} */}
@@ -145,6 +150,7 @@ function Header() {
                     >
                         {curentUser ? (
                             <Image
+                                hideOnClick={true}
                                 className={cx('user-avatar')}
                                 src="https://upload.wikimedia.org/wikipeia/commons/2/23/Cristiano_Ronaldo_WC2022_-_01.jpg"
                                 alt="Avatar account"
