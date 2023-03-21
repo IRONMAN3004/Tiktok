@@ -10,6 +10,7 @@
     min-height: 1000px;
     padding: 0px var(--default-layout-horizontal-spacer);
     // background-color: rgb(21, 22, 22);
+    margin-top: var(--default-layout-header-height, 60px);
 }
 
 .content {

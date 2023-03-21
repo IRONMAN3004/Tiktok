@@ -25,6 +25,7 @@ import Image from '~/components/Image';
 import Search from '~/components/Layout/components/Search';
 import Menu from '~/components/Popper/Menu';
 import styles from './Header.module.scss';
+import { useState } from 'react';
 // -------------------------------------------------------------------
 
 const MENU_ITEMS = [
@@ -34,6 +35,106 @@ const MENU_ITEMS = [
         children: {
             title: 'Language',
             data: [
+                {
+                    type: 'language',
+                    code: 'en',
+                    title: 'English',
+                },
+                {
+                    type: 'language',
+                    code: 'en',
+                    title: 'English',
+                },
+                {
+                    type: 'language',
+                    code: 'vi',
+                    title: 'Tiếng Việt',
+                },
+                {
+                    type: 'language',
+                    code: 'en',
+                    title: 'English',
+                },
+                {
+                    type: 'language',
+                    code: 'vi',
+                    title: 'Tiếng Việt',
+                },
+                {
+                    type: 'language',
+                    code: 'vi',
+                    title: 'Tiếng Việt',
+                },
+                {
+                    type: 'language',
+                    code: 'en',
+                    title: 'English',
+                },
+                {
+                    type: 'language',
+                    code: 'vi',
+                    title: 'Tiếng Việt',
+                },
+                {
+                    type: 'language',
+                    code: 'en',
+                    title: 'English',
+                },
+                {
+                    type: 'language',
+                    code: 'vi',
+                    title: 'Tiếng Việt',
+                },
+                {
+                    type: 'language',
+                    code: 'en',
+                    title: 'English',
+                },
+                {
+                    type: 'language',
+                    code: 'vi',
+                    title: 'Tiếng Việt',
+                },
+                {
+                    type: 'language',
+                    code: 'en',
+                    title: 'English',
+                },
+                {
+                    type: 'language',
+                    code: 'vi',
+                    title: 'Tiếng Việt',
+                },
+                {
+                    type: 'language',
+                    code: 'en',
+                    title: 'English',
+                },
+                {
+                    type: 'language',
+                    code: 'vi',
+                    title: 'Tiếng Việt',
+                },
+                {
+                    type: 'language',
+                    code: 'en',
+                    title: 'English',
+                },
+                {
+                    type: 'language',
+                    code: 'vi',
+                    title: 'Tiếng Việt',
+                },
+                {
+                    type: 'language',
+                    code: 'en',
+                    title: 'English',
+                },
+                {
+                    type: 'language',
+                    code: 'vi',
+                    title: 'Tiếng Việt',
+                },
                 {
                     type: 'language',
                     code: 'en',
@@ -59,8 +160,9 @@ const MENU_ITEMS = [
 ];
 
 function Header() {
+    const [curentUser, setCurentUser] = useState(false);
     // const curentUser = false;
-    const curentUser = true;
+    // const curentUser = true;
 
     const cx = classNames.bind(styles);
 
@@ -134,7 +236,13 @@ function Header() {
                         <>
                             <Button text>Upload</Button>
                             {/* Trường hợp tự custom ở 1 file khác chứ ko phải ở component custom thì thêm classname vào className={cx('custom-login')}} */}
-                            <Button primary rightIcon={<FontAwesomeIcon icon={faSignIn} />}>
+                            <Button
+                                primary
+                                rightIcon={<FontAwesomeIcon icon={faSignIn} />}
+                                onClick={() => {
+                                    setCurentUser(true);
+                                }}
+                            >
                                 Login
                             </Button>
                         </>
@@ -150,7 +258,10 @@ function Header() {
                     >
                         {curentUser ? (
                             <Image
-                                hideOnClick={true}
+                                onClick={() => {
+                                    setCurentUser(false);
+                                }}
+                                hideonClick={true}
                                 className={cx('user-avatar')}
                                 src="https://upload.wikimedia.org/wikipeia/commons/2/23/Cristiano_Ronaldo_WC2022_-_01.jpg"
                                 alt="Avatar account"

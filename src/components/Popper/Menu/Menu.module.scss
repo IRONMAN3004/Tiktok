@@ -17,6 +17,12 @@
 
 .menu-popper {
     padding: 8px 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.menu-scrollable {
+    overflow-y: auto;
 }
 
 .menu-item {
@@ -33,6 +39,7 @@
     height: 50px;
     margin-top: -8px;
     display: flex;
+    flex-shrink: 0;
 }
 
 .back-btn {
