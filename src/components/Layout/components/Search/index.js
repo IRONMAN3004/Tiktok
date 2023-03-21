@@ -2,9 +2,10 @@ import { faCircleXmark, faMagnifyingGlass, faSpinner } from '@fortawesome/free-s
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import classNames from 'classnames/bind';
 import { useEffect, useState, useRef } from 'react';
+
 import { useDebounce } from '~/hooks';
 import AccountItem from '~/components/AccountItem';
-
+import * as searchSevices from '~/apiServices/searchSevices';
 import HeadlessTippy from '@tippyjs/react/headless';
 import styles from './Search.module.scss';
 import 'tippy.js/dist/tippy.css';
@@ -26,17 +27,16 @@ function Search() {
             setSearchResult([]); //Mục đích khi xóa hết thì cho cái popper ko hiển thị nữa
             return;
         }
-        setLoading(true); //chỉ set(true )trước khi gọi api còn lại là false
-        fetch(`https://tiktok.fullstack.edu.vn/api/users/search?q=${encodeURIComponent(debounced)}&type=less`)
-            .then((res) => res.json())
-            .then((res) => {
-                // console.log(typeof res);
-                setSearchResult(res.data);
-                setLoading(false);
-            })
-            .catch(() => {
-                setLoading(false);
-            });
+
+        const fetchApi = async () => {
+            setLoading(true); //chỉ set(true )trước khi gọi api còn lại là false
+
+            const result = await searchSevices.search(debounced);
+            setSearchResult(result);
+            setLoading(false);
+        };
+
+        fetchApi();
     }, [debounced]);
 
     //Handle
