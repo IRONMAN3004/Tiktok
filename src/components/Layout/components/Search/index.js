@@ -2,6 +2,7 @@ import { faCircleXmark, faMagnifyingGlass, faSpinner } from '@fortawesome/free-s
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import classNames from 'classnames/bind';
 import { useEffect, useState, useRef } from 'react';
+import { useDebounce } from '~/hooks';
 import AccountItem from '~/components/AccountItem';
 
 import HeadlessTippy from '@tippyjs/react/headless';
@@ -18,14 +19,15 @@ function Search() {
     const [showResult, setShowResult] = useState(true);
     const [loading, setLoading] = useState(false);
     const myRef = useRef();
+    const debounced = useDebounce(searchValue, 600);
 
     useEffect(() => {
-        if (!searchValue.trim()) {
+        if (!debounced.trim()) {
             setSearchResult([]); //Mục đích khi xóa hết thì cho cái popper ko hiển thị nữa
             return;
         }
-        setLoading(true);
-        fetch(`https://tiktok.fullstack.edu.vn/api/users/search?q=${encodeURIComponent(searchValue)}&type=less`)
+        setLoading(true); //chỉ set(true )trước khi gọi api còn lại là false
+        fetch(`https://tiktok.fullstack.edu.vn/api/users/search?q=${encodeURIComponent(debounced)}&type=less`)
             .then((res) => res.json())
             .then((res) => {
                 // console.log(typeof res);
@@ -35,7 +37,7 @@ function Search() {
             .catch(() => {
                 setLoading(false);
             });
-    }, [searchValue]);
+    }, [debounced]);
 
     //Handle
     const handleClear = () => {
@@ -43,7 +45,7 @@ function Search() {
         myRef.current.focus();
         setSearchResult([]);
     };
-
+    //Xử lý trường hợp click ra ngoài muốn onFocus lại thì hiện popper
     const handleHideResult = () => {
         setShowResult(false);
     };
@@ -54,7 +56,6 @@ function Search() {
             // trigger="click"
             interactive="true"
             delay={[0, 250]}
-            //Đoạn này tức mình tự tạo content nó hiện ra chứ ko dùng mặc định
             render={(attrs) => (
                 <div className={cx('search-result')} tabIndex="-1" {...attrs}>
                     <PopperWrapper>
