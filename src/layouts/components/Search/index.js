@@ -5,7 +5,7 @@ import { useEffect, useState, useRef } from 'react';
 
 import { useDebounce } from '~/hooks';
 import AccountItem from '~/components/AccountItem';
-import * as searchSevices from '~/apiServices/searchSevices';
+import * as searchSevices from '~/services/searchSevices';
 import HeadlessTippy from '@tippyjs/react/headless';
 import styles from './Search.module.scss';
 import 'tippy.js/dist/tippy.css';
@@ -64,7 +64,7 @@ function Search() {
             <HeadlessTippy
                 visible={showResult && searchResult.length > 0}
                 // trigger="click"
-                // appendTo={() => document.body}
+                appendTo={() => document.body}
                 interactive="true"
                 delay={[0, 250]}
                 render={(attrs) => (

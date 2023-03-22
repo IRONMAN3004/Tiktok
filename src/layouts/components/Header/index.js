@@ -11,7 +11,7 @@ import {
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import classNames from 'classnames/bind';
 import images from '~/asset/images';
-import routesConfig from '~/config/routes';
+import config from '~/config';
 
 import Button from '~/components/Button';
 
@@ -22,7 +22,7 @@ import { faKeyboard } from '@fortawesome/free-regular-svg-icons';
 import 'tippy.js/dist/tippy.css';
 import { MessageIcon, UploadIcon } from '~/components/Icons';
 import Image from '~/components/Image';
-import Search from '~/components/Layout/components/Search';
+import Search from '~/layouts/components/Search';
 import Menu from '~/components/Popper/Menu';
 import styles from './Header.module.scss';
 import { useState } from 'react';
@@ -209,7 +209,7 @@ function Header() {
             <div className={cx('inner')}>
                 <div className={cx('logo')}>
                     {/* <img src={images.logo} alt="logo tiktok" /> */}
-                    <Link to={routesConfig.home}>
+                    <Link to={config.routes.home}>
                         <Image src={images.logo} />
                     </Link>
                 </div>
