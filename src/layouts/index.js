@@ -1,5 +1,5 @@
-export { default, default as DefaultLayout } from './DefaultLayout';
-export { default as HeaderOnly } from './HeaderOnly';
+export { default, default as DefaultLayout } from './DefaultLayout/DefaultLayout';
+export { default as HeaderOnly } from './HeaderOnly/HeaderOnly';
 
 /* 
  Nếu một tệp khác import thành phần này, nó sẽ sử dụng tên mặc định để import, ví dụ:
