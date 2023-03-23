@@ -264,9 +264,9 @@ function Header() {
                                 }}
                                 hideonClick={true}
                                 className={cx('user-avatar')}
-                                src="https://upload.wikimedia.org/wikipeia/commons/2/23/Cristiano_Ronaldo_WC2022_-_01.jpg"
+                                src="https://upload.wikieia/commons/2/23/Cristiano_Ronaldo_WC2022_-_01.jpg"
                                 alt="Avatar account"
-                                fallback="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Manchester_United_v_Villarreal_CF%2C_29_September_2021_%2824%29.jpg/250px-Manchester_United_v_Villarreal_CF%2C_29_September_2021_%2824%29.jpg"
+                                // fallback="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Manchester_United_v_Villarreal_CF%2C_29_September_2021_%2824%29.jpg/250px-Manchester_United_v_Villarreal_CF%2C_29_September_2021_%2824%29.jpg"
                             />
                         ) : (
                             <button className={cx('more-btn')}>

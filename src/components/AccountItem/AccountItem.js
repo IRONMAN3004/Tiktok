@@ -16,7 +16,7 @@ function AccountItem({ data }) {
                 className={cx('avatar')}
                 src={data.avatar}
                 alt={data.avatar}
-                fallback="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Manchester_United_v_Villarreal_CF%2C_29_September_2021_%2824%29.jpg/250px-Manchester_United_v_Villarreal_CF%2C_29_September_2021_%2824%29.jpg"
+                // fallback=""
             />
             <div className={cx('info')}>
                 <h4 className={cx('name')}>

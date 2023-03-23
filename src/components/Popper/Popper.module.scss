@@ -1,6 +1,6 @@
 .wrapper {
     // width: var(--search-width);
-    width: 100%;
+    width: 100%; //nó sẽ kế thừa width của thằng cha chứ ko sét cứng
     border-radius: 8px;
     box-shadow: rgb(0 0 0 / 12%) 0px 2px 12px;
     // margin-top: 8px;
