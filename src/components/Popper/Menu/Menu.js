@@ -15,6 +15,7 @@ function Menu({ children, width, items = [], hideOnClick = false, onChange = def
     const [history, setHistory] = useState([{ data: items }]);
     const curentEnd = history[history.length - 1];
 
+    //
     const renderItems = () => {
         return curentEnd.data.map((item, index) => {
             const isParent = !!item.children;
@@ -35,11 +36,14 @@ function Menu({ children, width, items = [], hideOnClick = false, onChange = def
             );
         });
     };
+
+    //
     const handleBack = () => {
         //back trên menu đa cấp
         setHistory((prev) => prev.slice(0, prev.length - 1));
     };
 
+    //
     const renderResult = (attrs) => (
         <div className={cx('menu-list')} tabIndex="-1" {...attrs}>
             <PopperWrapper className={cx('menu-popper')}>
@@ -50,6 +54,7 @@ function Menu({ children, width, items = [], hideOnClick = false, onChange = def
         </div>
     );
 
+    //
     const handleResetToFirstPage = () => {
         setHistory((prev) => prev.slice(0, 1));
     };
