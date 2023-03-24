@@ -7,6 +7,8 @@
 .container {
     z-index: 1;
     display: flex;
+    // align-items: center;
+    justify-content: space-between;
     width: 1150px;
     min-height: 1000px;
     max-width: 100%;
@@ -15,8 +17,11 @@
 }
 
 .content {
+    margin-left: 388px;
+    width: 700px;
+    max-width: 700px;
     flex-grow: 1;
-    background-color: rgb(235, 214, 238);
+    // background-color: rgb(235, 214, 238);
     min-height: 1000px;
-    padding: 20px 10px 0px 20px;
+    padding: 20px 0;
 }

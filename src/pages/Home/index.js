@@ -1,5 +1,17 @@
+import VideoItem from '~/components/Video/VideoItem';
+
 function Home() {
-    return <h2>Home page</h2>;
+    return (
+        <>
+            <VideoItem />
+            <VideoItem />
+            <VideoItem />
+            <VideoItem />
+            <VideoItem />
+            <VideoItem />
+            <VideoItem />
+        </>
+    );
 }
 
 export default Home;

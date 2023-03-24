@@ -1,7 +1,35 @@
 .wrapper {
     width: 328px;
-    min-height: 1000px;
+    // min-height: 1000px;
     padding: 20px 0px 26px 8px;
     margin-left: -19px;
     // background-color: rgb(167, 240, 157);
+    overflow-x: scroll;
+    overflow-y: auto;
+    padding-inline-start: 0px;
+    box-sizing: border-box;
+    background: rgb(255, 255, 255);
+    max-height: min(100vh - 16px - 56px, 920px);
+    min-height: 800px;
+    position: fixed;
 }
+
+/* Thanh scroll trên Chrome */
+::-webkit-scrollbar {
+    width: 7px; /* Độ rộng của thanh scroll */
+}
+
+/* Màu nền của thanh scroll */
+// ::-webkit-scrollbar-track {
+//     background: #e9dada;
+// }
+
+/* Màu của thanh cuộn */
+::-webkit-scrollbar-thumb {
+    background: #8f9392;
+}
+
+//   /* Hover trên thanh cuộn */
+//   ::-webkit-scrollbar-thumb:hover {
+//     background: #555;
+//   }

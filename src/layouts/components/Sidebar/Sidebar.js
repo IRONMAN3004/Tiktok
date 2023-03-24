@@ -35,6 +35,7 @@ function Sidebar() {
 
             <SuggestedAccounts label="Suggested Account" />
             <SuggestedAccounts label="Following Account" />
+            {/* <SuggestedAccounts label="Following Account" /> */}
         </aside>
     );
 }

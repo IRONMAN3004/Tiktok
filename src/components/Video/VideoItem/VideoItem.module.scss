@@ -1,0 +1,140 @@
+.wrapper {
+    display: flex;
+    flex: 1;
+    margin-right: -10px;
+    padding: 20px 0px 20px;
+    position: relative;
+
+    &::before {
+        content: '';
+        border-top: 1px solid rgb(163, 175, 171);
+        width: 100%;
+        position: absolute;
+        top: 0%;
+        transform: translateY(-100%);
+    }
+}
+
+.image {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    overflow: hidden;
+    object-fit: cover;
+}
+
+.body {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.name {
+    display: flex;
+    align-items: center;
+    line-height: 2.2rem;
+    text-decoration: none;
+
+    & > h4 {
+        padding-right: 10px;
+        font-size: 1.8rem;
+        font-weight: 700;
+    }
+    & > h5 {
+        font-weight: 500;
+    }
+}
+
+.description {
+    & > h4 {
+        font-weight: 400;
+    }
+}
+
+.hastags {
+    padding-top: 10px;
+    font-weight: 600;
+}
+
+.name-music {
+    font-weight: 600;
+}
+
+.icon-music {
+    padding-right: 10px;
+}
+
+.btn {
+    position: absolute !important;
+    right: 0;
+    top: 25px;
+}
+
+.video {
+    display: flex;
+    & iframe {
+        border-radius: 10px;
+        // object-fit: cover;
+    }
+}
+
+.video-container {
+    width: 320px;
+    height: 515px;
+    // padding-bottom: 56.25%; /* Tỉ lệ khung hình của video 16:9 */
+    position: relative;
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* hoặc "contain" tùy thuộc vào nhu cầu của bạn */
+}
+
+.icons {
+    // height: 237px;
+    display: flex;
+    justify-content: end;
+    flex-direction: column;
+    align-items: center;
+    padding-left: 20px;
+
+    // background-color: antiquewhite;
+    & button {
+        background-color: transparent;
+        margin-top: 8px;
+    }
+
+    & span {
+        display: block;
+        font-size: 1rem;
+        padding-top: 5px;
+        font-weight: 400;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+    }
+}
+
+.icon-heart {
+    padding: 8px;
+    font-size: 24px;
+    background-color: rgba(22, 24, 35, 0.06);
+    border-radius: 999px;
+}
+
+.icon-comment {
+    padding: 8px;
+    font-size: 24px;
+    background-color: rgba(22, 24, 35, 0.06);
+    border-radius: 999px;
+}
+
+.icon-share {
+    padding: 8px;
+    font-size: 24px;
+    background-color: rgba(22, 24, 35, 0.06);
+    border-radius: 999px;
+}

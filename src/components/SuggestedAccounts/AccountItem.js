@@ -23,7 +23,7 @@ function AccountItem() {
 
     return (
         <div>
-            <Tippy interactive delay={[800, 0]} offset={[-20, 0]} placement="bottom" render={renderPreview}>
+            <Tippy interactive delay={[800, 0]} offset={[-3, 6]} placement="bottom" render={renderPreview}>
                 <div className={cx('account-item')}>
                     <Image
                         className={cx('avatar')}
@@ -46,3 +46,10 @@ function AccountItem() {
 AccountItem.propTypes = {};
 
 export default AccountItem;
+
+/* 
+ muốn làm srcoll bar
+từ đầu mình sét height cho nó khi mình nhấn see all thì height
+ thay đổi thì dùng js để lấy chiều cao của thành phần đó để biết 
+ khi nào height thay đổi
+*/
