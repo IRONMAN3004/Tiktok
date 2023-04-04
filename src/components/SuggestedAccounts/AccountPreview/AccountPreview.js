@@ -2,6 +2,7 @@ import { faCheckCircle } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import classNames from 'classnames/bind';
 import Button from '~/components/Button';
+import Image from '~/components/Image';
 import styles from './AccountPreview.module.scss';
 
 const cx = classNames.bind(styles);
@@ -10,10 +11,11 @@ function AccountPreview() {
     return (
         <div className={cx('wrapper')}>
             <div className={cx('header')}>
-                <img
+                <Image
                     className={cx('avatar')}
                     src="https://p16-sign-va.tiktokcdn.com/tos-maliva-avt-0068/f90cc529e5bacc99b1459a81ab73ca87~c5_100x100.jpeg?x-expires=1679706000&x-signature=Bt20ZFslH992IjACuIkBNVRatYU%3D"
                     alt=""
+                    // fallback="https://2sao.vietnamnetjsc.vn/images/2022/04/27/12/12/tt2.jpg"
                 />
                 <Button className={cx('follow-btn')} primary>
                     Follow

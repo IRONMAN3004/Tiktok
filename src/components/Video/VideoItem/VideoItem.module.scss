@@ -13,6 +13,10 @@
         top: 0%;
         transform: translateY(-100%);
     }
+
+    &::first-letter {
+        border-top: 0px;
+    }
 }
 
 .image {
@@ -79,21 +83,21 @@
     }
 }
 
-.video-container {
-    width: 320px;
-    height: 515px;
-    // padding-bottom: 56.25%; /* Tỉ lệ khung hình của video 16:9 */
-    position: relative;
-}
+// .video-container {
+//     width: 320px;
+//     height: 515px;
+//     // padding-bottom: 56.25%; /* Tỉ lệ khung hình của video 16:9 */
+//     position: relative;
+// }
 
-.video-container iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: contain; /* hoặc "contain" tùy thuộc vào nhu cầu của bạn */
-}
+// .video-container iframe {
+//     position: absolute;
+//     top: 0;
+//     left: 0;
+//     width: 100%;
+//     height: 100%;
+//     object-fit: contain; /* hoặc "contain" tùy thuộc vào nhu cầu của bạn */
+// }
 
 .icons {
     // height: 237px;
@@ -106,7 +110,7 @@
     // background-color: antiquewhite;
     & button {
         background-color: transparent;
-        margin-top: 8px;
+        margin-top: 15px;
     }
 
     & span {
@@ -119,10 +123,19 @@
 }
 
 .icon-heart {
-    padding: 8px;
+    padding: 10px;
     font-size: 24px;
     background-color: rgba(22, 24, 35, 0.06);
     border-radius: 999px;
+    // &:active {
+    //     background-color: var(--background-gray-color-14);
+    //     font-size: 20px;
+    // }
+}
+
+.onactive {
+    color: red;
+    background-color: rgba(22, 24, 35, 0.06);
 }
 
 .icon-comment {
@@ -137,4 +150,59 @@
     font-size: 24px;
     background-color: rgba(22, 24, 35, 0.06);
     border-radius: 999px;
+}
+
+//share-wrapper
+.share-wrapper {
+    width: 284px;
+    padding: 8px;
+}
+
+.wrapper-item {
+    padding: 5px 10px;
+}
+//share-wrapper-item
+.share-wrapper-item {
+    display: flex;
+    align-items: center;
+    height: 58px;
+
+    & button {
+        line-height: 1.4rem;
+        background-color: rgba(245, 235, 197, 0.6);
+        padding: 10px 10px;
+        border-radius: 5px;
+        font-size: 1.7rem;
+
+        &:hover {
+            background-color: rgba(245, 235, 197, 0.4);
+        }
+    }
+
+    & p {
+        line-height: 1.4rem;
+        background-color: rgb(133, 162, 153, 0.6);
+        padding: 10px 10px;
+        width: 100%;
+        border-radius: 3px;
+        font-size: 1.7rem;
+        font-weight: 500;
+        &:hover {
+            background-color: rgb(133, 162, 153, 0.5);
+        }
+    }
+}
+
+.link {
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    padding: 0px 16px;
+    position: relative;
+    margin: 0px 4px;
+}
+.icon-down {
+    font-size: 2.5rem;
 }

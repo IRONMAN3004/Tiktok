@@ -1,9 +1,18 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { publicRoutes } from '~/routes/routes';
+import { publicRoutes } from '~/routes';
 import { Fragment } from 'react';
 import { DefaultLayout } from '~/layouts';
-
+// import { useEffect } from 'react';
+// import { getTestService } from '~/services/testService';
 function App() {
+    // useEffect(() => {
+    //     getTest();
+    // }, []);
+    // const getTest = async () => {
+    //     let data = await getTestService();
+    //     console.log(data);
+    // };
+    console.log('test');
     return (
         <Router>
             <div className="App">
