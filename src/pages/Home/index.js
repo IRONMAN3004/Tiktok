@@ -50,7 +50,7 @@ function Home() {
         },
 
         {
-            src: 'https://i.ytimg.com/vi/t_nCINnDNxY/maxresdefault.jpg',
+            src: 'https://cdn.ithethao.vn/image/12.05.2022/theanh96-gia-nhap-hang-ngu-kol-cua-500bros_1652352981.jpg?version=1652354040',
             nickname: 'theanh096',
             name: 'TheAnh96',
             none: false,
@@ -74,7 +74,7 @@ function Home() {
         },
 
         {
-            src: 'https://i.ytimg.com/vi/t_nCINnDNxY/maxresdefault.jpg',
+            src: 'https://i.pinimg.com/564x/ae/ef/0e/aeef0e1be313af1723bef285f2dc5005.jpg',
             nickname: 'dyqynh',
             name: 'qynh',
             none: false,
